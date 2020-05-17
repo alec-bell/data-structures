@@ -1,17 +1,10 @@
 #pragma once
 
 #include "node.h"
+#include "empty_exception.h"
 
 namespace ds
 {
-    struct empty : std::exception
-    {
-        const char* what() const noexcept 
-        {
-            return "Stack is empty!\n";
-        }
-    };
-
     template<typename T>
     class stack
     {
