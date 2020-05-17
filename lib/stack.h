@@ -22,8 +22,10 @@ namespace ds
     {
         if (head == NULL)
             throw empty();
-        T data = head->data;
+        node<T>* top = head;
         head = head->next;
+        T data = top->data;
+        free(top);
         return data;
     }
 
