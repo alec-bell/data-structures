@@ -4,6 +4,14 @@
 
 namespace ds
 {
+    struct empty : std::exception
+    {
+        const char* what() const noexcept 
+        {
+            return "Stack is empty!\n";
+        }
+    };
+
     template<typename T>
     class stack
     {
@@ -19,6 +27,8 @@ namespace ds
     template<typename T>
     T stack<T>::pop()
     {
+        if (head == NULL)
+            throw empty();
         T data = head->data;
         head = head->next;
         return data;
@@ -27,6 +37,8 @@ namespace ds
     template<typename T>
     T stack<T>::peek()
     {
+        if (head == NULL)
+            throw empty();
         return head->data;
     }
 
