@@ -1,0 +1,4 @@
+/bazel-bin
+/bazel-data-structures
+/bazel-out
+/bazel-testlogs
