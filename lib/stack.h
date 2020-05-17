@@ -1,14 +1,9 @@
 #pragma once
 
+#include "node.h"
+
 namespace ds
 {
-    template<typename T>
-    struct node
-    {
-        T data;
-        node* next;
-    };
-
     template<typename T>
     class stack
     {
@@ -18,7 +13,7 @@ namespace ds
         void push(T data);
         int size();
     private:
-        node<T>* head;
+        node<T>* head = NULL;
     };
 
     template<typename T>
