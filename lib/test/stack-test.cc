@@ -6,37 +6,13 @@ using namespace ds;
 TEST(stack_test, empty_pop_test)
 {
     stack<int> s;
-    try
-    {
-        s.pop();
-        FAIL();
-    }
-    catch (ds::empty const & err)
-    {
-        SUCCEED();
-    }
-    catch(...)
-    {
-        FAIL();
-    }
+    EXPECT_THROW(s.pop(), ds::empty);
 }
 
 TEST(stack_test, empty_peek_test)
 {
     stack<int> s;
-    try
-    {
-        s.peek();
-        FAIL();
-    }
-    catch (ds::empty const & err)
-    {
-        SUCCEED();
-    }
-    catch(...)
-    {
-        FAIL();
-    }
+    EXPECT_THROW(s.peek(), ds::empty);
 }
 
 TEST(stack_test, empty_size_test)
