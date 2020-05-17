@@ -7,3 +7,13 @@ cc_test(
         "//lib:stack",
     ],
 )
+
+cc_test(
+    name = "queue-test",
+    srcs = ["queue-test.cc"],
+    copts = ["-Iexternal/gtest/include"],
+    deps = [
+        "@gtest//:main",
+        "//lib:queue",
+    ],
+)

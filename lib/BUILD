@@ -16,3 +16,10 @@ cc_library(
     deps = ["node", "empty_exception"],
     visibility = ["//lib/test:__pkg__"]
 )
+
+cc_library(
+    name = "queue",
+    hdrs = ["queue.h"],
+    deps = ["node", "empty_exception"],
+    visibility = ["//lib/test:__pkg__"]
+)
