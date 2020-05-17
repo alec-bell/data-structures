@@ -16,6 +16,7 @@ namespace ds
         T pop();
         T peek();
         void push(T data);
+        int size();
     private:
         node<T>* head;
     };
@@ -43,4 +44,16 @@ namespace ds
         head = new_node;
     }
 
+    template<typename T>
+    int stack<T>::size()
+    {
+        int count = 0;
+        node<T>* cur_node = head;
+        while (cur_node != NULL)
+        {
+            count++;
+            cur_node = cur_node->next;
+        }
+        return count;
+    }
 }
